@@ -1,0 +1,19 @@
+.red-button {
+    background-color: #ff0000; /* Red background */
+    color: #fff; /* White text */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+.grey-button {
+    background-color: lightgray; /* Red background */
+    color: black; /* White text */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    justify-content: space-between;
+    margin-right: 5px;
+
+}
