@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import * as db from "../Database";
+// import * as db from "../Database";
+
 function Dashboard(
     { courses, course, setCourse, addNewCourse,
         deleteCourse, updateCourse }: {
