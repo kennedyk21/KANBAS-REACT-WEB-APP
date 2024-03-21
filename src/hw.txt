@@ -1,0 +1,33 @@
+ 85     char mychar; 
+ 86     int num = 0;
+ 87     int hits = 0;
+ 88     int misses = 0;
+ 89         
+ 90     while (1) {
+ 91         int rc = read(0, &mychar, 1);
+ 92         if (rc == 0) { // if end-of-file
+ 93             break;
+ 94         }
+ 95         if (mychar == ' '|| mychar == ',' || mychar == '\n') {
+ 96              rc = read(0, &mychar, 1);
+ 97              printf("%d :", num);
+ 98              //1012: MISS (Tag/Index/Offset: 1/125/0
+ 99              int cacheIndex = (num>>2) & 127;
+100              if (cache[cacheIndex].valid && cache[cacheIndex].address == num) {
+101                 printf("HIT ");
+102                 hits++;
+103              } else {
+104                 printf("MISS ");
+105                 misses++;
+106                 cache[cacheIndex].valid = 1;
+107                 cache[cacheIndex].address = num;
+108             }
+109             printf(" (Tag/Index/Offset: %d/%d/%d)\n", (num>>9), (num>>2) & 127, num & 3);
+110 
+111             num = 0;
+112         } else {
+113             num = 10 * num + (mychar - 48);
+114         }
+115     }
+116 
+117     printf("Hits: %d, Misses: %d\n", hits, misses);
