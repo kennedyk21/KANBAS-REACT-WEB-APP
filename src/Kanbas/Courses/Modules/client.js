@@ -22,7 +22,8 @@ export const findModulesForCourse = async (courseId) => {
 };
 
 export const updateModule = async (module) => {
-  const response = await axios.
-    put(`${MODULES_API}/${module._id}`, module);
+  const response = await axios.put(
+    `${MODULES_API}/${module._id}`, module
+    );
   return response.data;
 };

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 
 import { FaEllipsisV, FaCheckCircle, FaPlusCircle } from "react-icons/fa";
 import { useParams } from "react-router";
@@ -42,7 +42,7 @@ function ModuleList() {
         });
     };
     const handleUpdateModule = async () => {
-        const status = await client.updateModule(module);
+        //const status = await client.updateModule(module);
         dispatch(updateModule(module));
       };
     
