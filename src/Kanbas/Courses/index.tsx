@@ -1,13 +1,26 @@
 // import { courses } from "../../Kanbas/Database";
+import { useState, useEffect } from "react";
+import axios from "axios";
 import { Navigate, Route, Routes, useParams, useLocation } from "react-router-dom";
 import { HiMiniBars3 } from "react-icons/hi2";
 import CourseNavigation from "./Navigation";
 import Modules from "./Modules";
 import Home from "./Home";
 import Assignments from "./Assignments";
-function Courses({ courses }: { courses: any[]; }) {
+function Courses() {
   const { courseId } = useParams();
-  const course = courses.find((course) => course._id === courseId);
+  const COURSES_API = "http://localhost:4000/api/courses";
+  const [course, setCourse] = useState<any>({ _id: "" });
+  const findCourseById = async (courseId?: string) => {
+    const response = await axios.get(
+      `${COURSES_API}/${courseId}`
+    );
+    setCourse(response.data);
+  };
+  useEffect(() => {
+    findCourseById(courseId);
+  }, [courseId]);
+
   const location = useLocation();
   const pathParts = location.pathname.split("/"); // Split the pathname by "/"
   const routeName = pathParts[pathParts.length - 1]; // Take the last part
