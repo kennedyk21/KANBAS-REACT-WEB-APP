@@ -5,6 +5,7 @@ import BooleanVariables from "./variables/BooleanVariables";
 import WorkingWithFunctions from "./conditionals";
 import WorkingFunctions from "./functions";
 import Jsoon from "./json"; // Import the Jsoon component
+import TemplateLiterals from "./string/TemplateLiterals";
 
 function JavaScript() {
     console.log("Hello from JavaScript");
@@ -16,6 +17,7 @@ function JavaScript() {
           <VariablesAndConstants/>
           <VariableTypes/>
           <BooleanVariables/>
+          <TemplateLiterals/>
           <Jsoon/> 
        </div>
     );
