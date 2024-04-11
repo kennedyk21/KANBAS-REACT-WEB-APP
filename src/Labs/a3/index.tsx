@@ -6,6 +6,7 @@ function Assignment3() {
   return (
     <div>
       <h2>Assignment 3</h2>
+      <JavaScript/>
       <ul className="list-group">
         {todos.map((todo: TodoType) => (
           <li className="list-group-item" key={todo.id}>
@@ -13,7 +14,6 @@ function Assignment3() {
           </li>
         ))}
       </ul>
-      ...
     </div>
   );
 }

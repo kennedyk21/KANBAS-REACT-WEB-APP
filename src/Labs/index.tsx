@@ -1,6 +1,6 @@
 import Nav from "../nav";
-//import Assignment3 from "./a3";
-//import Assignment4 from "./a4";
+import Assignment3 from "./a3";
+import Assignment4 from "./a4";
 import Assignment5 from "./a5";
 import {Routes, Route} from "react-router-dom";
 import store from "./store";
@@ -11,13 +11,12 @@ function Labs() {
    <div>
      <Nav/>
      <Routes>
-       {/* <Route path="/"
-        element={<Navigate
-                  to="a3"/>}/>
+        <Route path="/"
+        element={<Nav/>}/>
        <Route path="a3"
         element={<Assignment3/>}/>
        <Route path="a4"
-        element={<Assignment4/>}/> */}
+        element={<Assignment4/>}/>
         <Route path="a5"
         element={<Assignment5/>}/>
      </Routes>
